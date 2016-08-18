@@ -1,0 +1,8 @@
+01. linux下通过so实现接口注入, 01.example_so项目的user中包含有view_callback接口，将由01.example_so项目中my类注入,my类是实现了view_callback接口,
+    具体注入动作由01.main项目完成。
+
+02. 大文件在服务器中间TCP传输。
+
+03. rabbitmap传输(point-to-point模式)
+
+04. 使用tail命令跟踪日志文件的变化
