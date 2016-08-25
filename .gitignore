@@ -49,3 +49,13 @@
 /04.receiver/.cproject
 /04.receiver/.project
 /04.receiver/.settings
+/05.rabbitmq_rpc_receiver/receiver
+/05.rabbitmq_rpc_receiver/*.o
+/05.rabbitmq_rpc_receiver/.cproject
+/05.rabbitmq_rpc_receiver/.project
+/05.rabbitmq_rpc_receiver/.settings
+/05.rabbitmq_rpc_sendor/sendor
+/05.rabbitmq_rpc_sendor/*.o
+/05.rabbitmq_rpc_sendor/.cproject
+/05.rabbitmq_rpc_sendor/.project
+/05.rabbitmq_rpc_sendor/.settings

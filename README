@@ -6,3 +6,5 @@
 03. rabbitmap传输(point-to-point模式)
 
 04. 使用tail命令跟踪日志文件的变化
+
+05. rabbitmap传输(RPC模式)
