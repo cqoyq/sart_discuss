@@ -26,6 +26,15 @@ void next(){
 	{
 		if(handler->connected())
 		{
+//				char d[1104] = {0x00};
+//				memset(d, 0x00, 1104);
+//				d[0] = 0x01;
+//				d[1] = 0x02;
+//				d[2] = 0x03;
+//				d[3] = 0x04;
+//				d[1102] = 0xFE;
+//				d[1103] = 0xFF;
+//				bool re = channel->publish("", "hello", &d[0], 1104);
 				bool re = channel->publish("", "hello", "Hello World!");
 				std::cout << " [x] Sent 'Hello World!'" << ",return:" << re << std::endl;
 
@@ -33,9 +42,11 @@ void next(){
 				channel->close();
 				delete channel;
 
-				boost::this_thread::sleep(boost::posix_time::seconds(2));
+				boost::this_thread::sleep(boost::posix_time::milliseconds(500));
 
-				if(num == 4)
+//				return;
+
+				if(num == 400)
 					return;
 				else{
 					num++;
@@ -49,7 +60,7 @@ void next(){
 void run(){
 
 	handler = new AsioHandler(ioService);
-	handler->connect("192.168.2.80", 5672);
+	handler->connect("127.0.0.1", 5672);
 
 
 	connection = new AMQP::Connection(handler, AMQP::Login("guest", "guest"), "/");

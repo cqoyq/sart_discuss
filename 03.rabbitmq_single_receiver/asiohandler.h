@@ -7,6 +7,13 @@
 #include <amqpcpp.h>
 #include <boost/asio.hpp>
 
+#include <boost/bind.hpp>
+using namespace boost;
+using namespace boost::asio;
+
+#include <boost/date_time/posix_time/posix_time.hpp>
+using namespace boost::posix_time;
+
 class AmqpBuffer;
 class AsioHandler: public AMQP::ConnectionHandler
 {
@@ -55,5 +62,14 @@ public:
     AsioHandler& operator=(const AsioHandler&)=delete;
 
     bool connected()const;
+
+private:
+    ptime p1_;						// Save heart jump datetime.
+    deadline_timer heartjump_timer_;
+
+    void check_heartjump();
+    bool check_heartjump_timeout();
+    void send_heartjump();
+    void set_heartjump_timer();
 };
 
